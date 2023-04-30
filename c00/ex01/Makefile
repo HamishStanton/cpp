@@ -1,0 +1,9 @@
+NAME = phonebook
+
+FLAGS = -Wall -Wextra -Werror -std=c++98
+
+all:
+	c++ $(FLAGS) phonebook.cpp -o $(NAME)
+
+clean:
+	rm -rf $(NAME)
