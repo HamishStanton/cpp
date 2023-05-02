@@ -6,7 +6,7 @@
 /*   By: hstanton <hstanton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 23:35:23 by hstanton          #+#    #+#             */
-/*   Updated: 2023/05/03 04:44:47 by hstanton         ###   ########.fr       */
+/*   Updated: 2023/05/03 04:54:55 by hstanton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
             std::string name;
             int hit;
             int energy;

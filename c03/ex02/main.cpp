@@ -5,39 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hstanton <hstanton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 23:35:34 by hstanton          #+#    #+#             */
-/*   Updated: 2023/05/03 04:20:57 by hstanton         ###   ########.fr       */
+/*   Created: 2023/05/03 05:26:36 by hstanton          #+#    #+#             */
+/*   Updated: 2023/05/03 05:26:40 by hstanton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main ()
 {
 	ClapTrap	clappy("steve");
-	ClapTrap	clappers = clappy;
+	ScavTrap	scav("barry cornelius");
+    FragTrap    frag("axolotl");
 
-	clappers.setName("bob");
+	clappy.attack(scav.getName());
+    frag.attack(clappy.getName());
+	scav.takeDamage(clappy.getAttack());
+    clappy.takeDamage(frag.getAttack());
+	scav.attack(clappy.getName());
+	clappy.takeDamage(scav.getAttack());
 
-	clappy.attack(clappers.getName());
-	clappers.takeDamage(clappy.getAttack());
-	clappers.attack(clappy.getName());
-	clappy.takeDamage(clappers.getAttack());
-
-	clappy.beRepaired(10);
-	clappers.beRepaired(5);
+	clappy.beRepaired(200);
+	scav.beRepaired(5);
+    frag.beRepaired(70);
 
 	clappy.takeDamage(6);
-	clappers.takeDamage(100);
+	scav.takeDamage(100);
+    frag.takeDamage(2);
 
-	clappers.attack(clappy.getName());
-
-	for (int repair = 1; repair < 10; repair++)
-	{
-		clappy.beRepaired(repair);
-	}
-	
-	clappy.attack("greg");
+    scav.guardGate();
+    frag.highFivesGuys();
 
 	return (0);
 }

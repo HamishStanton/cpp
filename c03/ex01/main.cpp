@@ -5,39 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hstanton <hstanton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 23:35:34 by hstanton          #+#    #+#             */
-/*   Updated: 2023/05/03 04:20:57 by hstanton         ###   ########.fr       */
+/*   Created: 2023/05/03 04:46:18 by hstanton          #+#    #+#             */
+/*   Updated: 2023/05/03 04:46:35 by hstanton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main ()
 {
 	ClapTrap	clappy("steve");
-	ClapTrap	clappers = clappy;
+	ScavTrap	scav("barry cornelius");
 
-	clappers.setName("bob");
+	scav.setName("bob");
 
-	clappy.attack(clappers.getName());
-	clappers.takeDamage(clappy.getAttack());
-	clappers.attack(clappy.getName());
-	clappy.takeDamage(clappers.getAttack());
+	clappy.attack(scav.getName());
+	scav.takeDamage(clappy.getAttack());
+	scav.attack(clappy.getName());
+	clappy.takeDamage(scav.getAttack());
 
-	clappy.beRepaired(10);
-	clappers.beRepaired(5);
+	clappy.beRepaired(200);
+	scav.beRepaired(5);
 
 	clappy.takeDamage(6);
-	clappers.takeDamage(100);
+	scav.takeDamage(100);
 
-	clappers.attack(clappy.getName());
-
-	for (int repair = 1; repair < 10; repair++)
-	{
-		clappy.beRepaired(repair);
-	}
-	
-	clappy.attack("greg");
+    scav.guardGate();
 
 	return (0);
 }
